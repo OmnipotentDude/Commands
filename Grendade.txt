@@ -1,0 +1,16 @@
+Paste these into command block or function files (by modifying it a bit)
+
+The arrow on the command block should be aligned in a sigle line, starting from the repeating command to chain, unconditional command
+
+Repeating, unconditional
+/scoreboard players tag @e[type=Item] add smoke {Item:{id:"minecraft:fire_charge"},OnGround:1b}
+
+Chain, conditional, always active
+/execute @e[tag=smoke] ~ ~ ~ /particle lava ~ ~ ~ 3.5 0.5 3.5 0.001 1000 force
+
+Chain, conditional, always active
+/execute @e[tag=smoke] ~ ~ ~ /summon tnt
+
+chain, unconditional, always active
+/kill @e[tag=smoke]
+
