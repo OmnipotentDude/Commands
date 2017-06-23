@@ -1,0 +1,11 @@
+First downlaod the .nbt file
+Next hold windows and r togethere, to open the roaming menu
+Now type in `appdata%
+Now locate the .minecraft folder, saves, the world you want to use the modpack and create a new folder called "strcutures" without the "".
+Inside the folder paste in the .nbt file
+
+Inside your world, type in /give @p structure_block
+Place the structure block and set it to load mode
+Type in MinecraftRealism then click load
+
+Now your machine is set. Make sure you place it in the spawn chunks so that it works anywhere!
