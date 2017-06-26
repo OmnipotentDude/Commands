@@ -1,0 +1,56 @@
+All chain commands are always active
+-> This represent the direction the arrow of the command is facing
+C means conditional, UC means unconditional
+A means always active, R means needs redstone
+[I] is impulse, [R] is epeating, [C] is chain
+The numbers (#) represent which commands goe sin which command block
+No arrow means it is not facing into any command block
+
+
+
+spawning the custom mob naturally
+[I] UC R (1)
+[R] UC R (2)  ->  [C] UC A (3)  ->  [C] C A (4) ->  [C] C A (5)
+[R] UC R (6)  ->  [C] UC A (7)
+
+
+1)
+scoreboard objectives add mobtimer dummy
+2)
+scoreboard players add hello mobtimer 1
+3)
+scoreboard players test hello mobtimer 100
+4)
+scoreboard players set hello mobtimer 0
+5)
+/execute @a ~ ~ ~ entitydata @r[type=anentity,rm=16,r=100] {CustomName:"spawn_custommob"}
+6)
+/execute @e[type=anentity,name=spawn_custommob] ~ ~ ~ /summon
+7)
+/kill @e[type=anentity,name=spawn_customob]
+
+
+
+Adding effects to the mob
+[I] UC R (1)
+[R] UC R (2)  ->  [C] UC A (3)  ->  [C] C A (4) ->  [C] C A (5)
+
+
+1)
+scoreboard objectives add spawntimer dummy
+2)
+scoreboard players add bye spawntimer 1
+3)
+scoreboard players test bye spawntimer 100
+4)
+scoreboard players set bye spawntimer 0
+5)
+/execute @e[type=whatentityyourmobis,name=nameofyourcustommob] ~ ~1 ~ /summon
+
+
+optional
+hook this up to an NOT gate so that it activates when the mob spawning is not activated
+[I] UC R (1)
+
+1)
+scoreboard players set hello mobtimer 0
