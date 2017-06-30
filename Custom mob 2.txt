@@ -1,0 +1,16 @@
+Impulse command
+execute @a ~ ~ ~ entitydata @r[type=sheep,rm=16,r=100] {CustomName:"spawn_leach"}
+The sheep represents the mob we will be ransforming into our custom mob. It could be any entity
+
+Next we run a repeating command running into a chain command. The repeating command needs redstone and the chain command is always active.
+No conditional command
+
+Repeating:
+execute @e[type=sheep,name=spawn_leach] ~ ~ ~ /summon
+
+The /summon just shows taht you can run a summon comamnd to summon your mob. To craete one, use MCStacker
+
+Chain:
+/tp @e[type=sheep,name=spawn_leach] ~ -10 ~
+
+Now we send the sheep to the void so it dies and it's loot wont appear
